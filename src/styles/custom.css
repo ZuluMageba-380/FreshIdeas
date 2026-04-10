@@ -1,0 +1,70 @@
+/* Custom animations and effects */
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(115, 189, 106, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(115, 189, 106, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #73BD6A;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #91d085;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(115, 189, 106, 0.3);
+  color: #ffffff;
+}
+
+/* Focus visible outline */
+*:focus-visible {
+  outline: 2px solid #73BD6A;
+  outline-offset: 2px;
+}
