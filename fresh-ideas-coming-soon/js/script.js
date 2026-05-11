@@ -39,13 +39,22 @@ function initializeNavigation() {
     }
 
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            const navAttribute = link.getAttribute('data-nav');
+            
+            // Close mobile menu
             navMenu.classList.remove('active');
             if (hamburger) hamburger.classList.remove('active');
             
             // Set active link
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
+
+            // Handle home button - show loader and redirect
+            if (navAttribute === 'home') {
+                e.preventDefault();
+                showLoaderAndRedirect(window.location.pathname.includes('index') ? '#home' : 'index.html');
+            }
         });
     });
 
@@ -65,6 +74,49 @@ function initializeNavigation() {
             link.classList.add('active');
         }
     });
+}
+
+// ============ SHOW LOADER AND REDIRECT ============
+function showLoaderAndRedirect(target) {
+    // Create a temporary loader
+    const loaderHTML = `
+        <div id="transitionLoader" class="loader" style="z-index: 10001;">
+            <div class="loader-glow"></div>
+            <div class="loader-content">
+                <div class="loader-circle">
+                    <div class="outer-ring"></div>
+                    <div class="spinning-ring"></div>
+                    <div class="inner-glow"></div>
+                </div>
+                <p class="loader-text">Loading Experience</p>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', loaderHTML);
+    document.body.classList.add('no-scroll');
+    
+    // Wait 2 seconds then navigate or scroll
+    setTimeout(() => {
+        const transitionLoader = document.getElementById('transitionLoader');
+        if (transitionLoader) {
+            transitionLoader.classList.add('hide');
+            transitionLoader.addEventListener('animationend', () => {
+                transitionLoader.remove();
+                document.body.classList.remove('no-scroll');
+            }, { once: true });
+        }
+        
+        // Navigate to target
+        if (target.startsWith('#')) {
+            const element = document.querySelector(target);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        } else {
+            window.location.href = target;
+        }
+    }, 2000);
 }
 
 // ============ CLIENTS CAROUSEL ============
@@ -285,7 +337,7 @@ function initializeLoader() {
         setTimeout(() => {
             loader.classList.add('hide');
             document.body.classList.remove('no-scroll');
-        }, 600);
+        }, 2000);
 
         loader.addEventListener('animationend', () => {
             if (loader && loader.parentNode) {
@@ -485,51 +537,26 @@ if (window.performance) {
     });
 }
 
+// ============ SMOOTH INFINITE CLIENT LOGO LOOP ============
+document.addEventListener('DOMContentLoaded', () => {
+    const clientsInner = document.getElementById("clientsInner");
+    
+    if (!clientsInner) return;
 
+    let isPaused = false;
 
-// ============ LOADER ============
-function initLoader() {
-    const loader = $('#loader');
-    if (!loader) return;
-
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loader.classList.add('hidden');
-            document.body.style.overflow = '';
-            initHeroCounters();
-        }, 2200);
+    clientsInner.addEventListener("mouseenter", () => {
+        isPaused = true;
     });
 
-    // Fallback
-    setTimeout(() => {
-        loader.classList.add('hidden');
-        document.body.style.overflow = '';
-    }, 4000);
-}
+    clientsInner.addEventListener("mouseleave", () => {
+        isPaused = false;
+    });
 
-// =========================================
-// SMOOTH INFINITE CLIENT LOGO LOOP
-// =========================================
+    // OPTIONAL PARALLAX FEEL
+    document.addEventListener("mousemove", (e) => {
+        const moveX = (window.innerWidth / 2 - e.clientX) / 120;
 
-const clientsInner = document.getElementById("clientsInner");
-
-let isPaused = false;
-
-clientsInner.addEventListener("mouseenter", () => {
-    isPaused = true;
+        clientsInner.style.transform = `translateX(${moveX}px)`;
+    });
 });
-
-clientsInner.addEventListener("mouseleave", () => {
-    isPaused = false;
-});
-
-// OPTIONAL PARALLAX FEEL
-document.addEventListener("mousemove", (e) => {
-
-    const moveX = (window.innerWidth / 2 - e.clientX) / 120;
-
-    clientsInner.style.transform = `
-        translateX(${moveX}px)
-    `;
-});
-
