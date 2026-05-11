@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Ideas - Digital Agency</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Russo+One:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Premium Loader -->
+    <div id="loader" class="loader">
+        <div class="loader-glow"></div>
+        <div class="loader-content">
+            <div class="loader-circle">
+                <div class="outer-ring"></div>
+                <div class="spinning-ring"></div>
+                <div class="inner-glow"></div>
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="Fresh Ideas Logo" class="loader-logo" id="loaderLogoImg">
+                </div>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-fill"></div>
+            </div>
+            <p class="loader-text">Loading Experience</p>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Floating Logo Watermarks -->
+    <div class="luxury-logo-bg" aria-hidden="true">
+        <div class="floating-logo logo-one">
+            <img src="images/logo-full.png" alt="Fresh Ideas Logo">
+        </div>
+        <div class="floating-logo logo-two">
+            <img src="images/logo.png" alt="Fresh Ideas Logo">
+        </div>
+        <div class="logo-glow glow-one"></div>
+        <div class="logo-glow glow-two"></div>
+    </div>
+
+    <!-- Background Orbs -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <div class="logo-image-wrapper">
+                    <img src="images/logo.png" alt="Fresh Ideas Logo" class="logo-image">
+                </div>
+                <span class="logo-text">Fresh Ideas</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" data-nav="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-nav="about">About</a></li>
+              <li class="nav-dropdown">
+                    <a href="#" class="nav-link active">Services <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#services">Overview</a></li>
+                        <li><a href="#services" data-service="branding">Branding</a></li>
+                        <li><a href="#services" data-service="photography">Photography</a></li>
+                        <li><a href="#services" data-service="it">IT Solutions</a></li>
+                    </ul>
+                </li>
+                <li><a href="#portfolio" class="nav-link" data-nav="portfolio">Portfolio</a></li>
+                <li><a href="#about" class="nav-link" data-nav="about">About Us</a></li>
+                <li><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Let's Talk</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transforming Vision Into<br><span class="highlight">Digital Excellence</span></h1>
+                <p class="hero-description">Specialising with Premium digital solutions in Branding, Professional Photography, and IT Services</p>
+                <a href="contact.html" class="cta-button">Get Started Today</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/logo-full.png" alt="Fresh Ideas" class="hero-logo">
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+     <!-- ========== MARQUEE ========== -->
+    <div class="marquee-band" aria-hidden="true">
+        <div class="marquee-inner">
+            <span>Branding</span><span class="marquee-dot">✦</span>
+            <span>Photography</span><span class="marquee-dot">✦</span>
+            <span>Web Development</span><span class="marquee-dot">✦</span>
+            <span>IT Solutions</span><span class="marquee-dot">✦</span>
+            <span>Creative Direction</span><span class="marquee-dot">✦</span>
+            <span>Marketing</span><span class="marquee-dot">✦</span>
+            <span>Branding</span><span class="marquee-dot">✦</span>
+            <span>Photography</span><span class="marquee-dot">✦</span>
+            <span>Web Development</span><span class="marquee-dot">✦</span>
+            <span>IT Solutions</span><span class="marquee-dot">✦</span>
+            <span>Creative Direction</span><span class="marquee-dot">✦</span>
+            <span>Marketing</span><span class="marquee-dot">✦</span>
+        </div>
+    </div>
+
+    <!-- Services Overview Section -->
+    <section class="services-overview" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card service-branding">
+                    <div class="service-image">
+                        <img src="images/brandi.jpg" alt="Branding">
+                        <div class="service-overlay">
+                            <h3>Branding</h3>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3>Brand Identity</h3>
+                        <p>Create powerful brand identities that resonate with your audience</p>
+                        <a href="branding.html" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="service-card service-photography">
+                    <div class="service-image">
+                        <img src="images/graphy.jpg" alt="Photography">
+                        <div class="service-overlay">
+                            <h3>Photography</h3>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3>Professional Photography</h3>
+                        <p>Capture moments that tell your brand story with precision</p>
+                        <a href="photography.html" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="service-card service-it">
+                    <div class="service-image">
+                        <img src="images/it.jpg" alt="IT Solutions">
+                        <div class="service-overlay">
+                            <h3>IT Solutions</h3>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3>Technology Solutions</h3>
+                        <p>Cutting-edge digital solutions for modern business challenges</p>
+                        <a href="it-solutions.html" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Fresh Ideas</h2>
+                <p>Fresh Ideas ZA is a creative agency offering integrated services in branding, marketing, and IT solutions. We help businesses establish a strong presence by delivering innovative ideas tailored to their needs.</p>
+                <p>Our expertise includes brand development, digital marketing, social media management, content creation, custom software development, web design, mobile app development, and e-commerce solutions. With our creativity, professionalism, and collaborative approach, we deliver exceptional results that drive brand awareness and business growth.</p>
+                <a href="about.html" class="cta-button secondary">Read Our Story</a>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <div class="stat-number">47+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Clients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- ========== VERTICAL CLIENT LOGO LOOP ========== -->
+<section class="clients" id="clients">
+
+    <div class="clients-slider">
+
+        <div class="clients-column">
+
+            <!-- ORIGINAL IMAGES -->
+            <div class="client-card">
+                <img src="images/sasol.jpg" alt="Sasol">
+            </div>
+
+            <div class="client-card">
+                <img src="images/Emerald.jpg" alt="Emerald">
+            </div>
+
+            <div class="client-card">
+                <img src="images/CWI.png" alt="CWI">
+            </div>
+
+            <div class="client-card">
+                <img src="images/Qns.png" alt="QNS">
+            </div>
+
+            <div class="client-card">
+                <img src="images/ksm.png" alt="KSM">
+            </div>
+
+            <!-- DUPLICATES FOR SMOOTH LOOP -->
+            <div class="client-card">
+                <img src="images/sasol.jpg" alt="Sasol">
+            </div>
+
+            <div class="client-card">
+                <img src="images/Emerald.jpg" alt="Emerald">
+            </div>
+
+            <div class="client-card">
+                <img src="images/CWI.png" alt="CWI">
+            </div>
+
+            <div class="client-card">
+                <img src="images/Qns.png" alt="QNS">
+            </div>
+
+            <div class="client-card">
+                <img src="images/ksm.png" alt="KSM">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+   
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's work together to bring your vision to life</p>
+            <a href="contact.html" class="cta-button">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Fresh Ideas</h3>
+                <p>Premium digital solutions for modern business.</p>
+               <div class="social-links">
+    <a href="https://www.facebook.com/freshideasza/" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+    <a href="https://www.instagram.com/_freshideasza/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+    <a href="https://www.linkedin.com/in/fresh-ideas-za-206aa8122/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BZulPyWKsRdChbJZ5V6TMpA%3D%3D" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+</div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services-overview.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="branding.html">Branding</a></li>
+                    <li><a href="photography.html">Photography</a></li>
+                    <li><a href="it-solutions.html">IT Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:info@freshideasza.co.za">info@freshideasza.co.za</a></p>
+                <p>Phone: <a href="tel:+27763934097">+27 763 934 097</a></p>
+                <p>Vereeniging, South Africa</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fresh Ideas. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
